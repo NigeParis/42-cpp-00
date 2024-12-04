@@ -1,13 +1,14 @@
 ###############################################################################
 ## ARGUMENTS
 
-NAME= megaphone
+NAME= phonebook
 CFLAGS=  -Wall -Wextra -Werror -std=c++98
 
 SRCS=$(addprefix $(SRC_DIR), $(SRC))
 OBJ=$(SRC:.cpp=.o)
 OBJS=$(addprefix $(OBJ_DIR), $(OBJ))
 
+INCLUDE = -I./include/
 
 CC=c++
 ###############################################################################
@@ -15,7 +16,7 @@ CC=c++
 
 
 SRC_DIR = src/
-SRC = MegaPhone.cpp
+SRC = PhoneBook.cpp
 OBJ_DIR = build/
 
 ###############################################################################
@@ -25,11 +26,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Creating FILE .......\n"
-	@$(CC) $(CFLAGS) $(OBJS) -o $@ >/dev/null
+	@$(CC) $(CFLAGS) $(OBJS) -o $@ > /dev/null
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@  > /dev/null
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE) > /dev/null
 
 clean: 
 	@echo "CLEAN all .o files .......\n"
