@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:48:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 17:01:27 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:15:16 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 static int getName(PhoneBook *phonebook, std :: string input)
 {
-	std :: cout << "name is " << input << std :: endl; 
 	if (input.empty())
 		return (1);
 	phonebook->setName(input, 0);	

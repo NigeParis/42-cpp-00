@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 09:14:06 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 16:36:08 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:12:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,9 @@ int Contact :: get_contact_index(void) {
 void Contact :: set_name(std :: string input) {
 
 	this->name = input;
+};
+
+std :: string Contact :: get_name(void) {
+
+	return (this->name);	
 };

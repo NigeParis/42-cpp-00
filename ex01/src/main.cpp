@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 17:56:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:19:21 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main(void) {
 	std :: string input;
 	
 	
-	std :: cout << "PhoneBook : ";
 	while (1) {
 		
-		std :: getline(std :: cin, input);
+		std :: cout << "contact name : " << phonebook.getName(0) << " index : " << phonebook.get_record_order(1) << std :: endl;
 		std :: cout << "PhoneBook : ";
+		std :: getline(std :: cin, input);
 	
 
 	

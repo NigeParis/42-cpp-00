@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 16:34:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:07:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Contact {
 	void set_record_nbr(int i);
 	void set_index(int index);
 	void set_name(std :: string input);
+	std :: string get_name(void);
 	int get_record_nbr(void);
 	int get_contact_index(void);
 

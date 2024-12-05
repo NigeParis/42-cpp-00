@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 16:46:45 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:11:23 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ int PhoneBook :: get_index(int index) {
 void PhoneBook :: setName(std :: string input, int index) {
 
 	PhoneBook :: contact[index].set_name(input);	
+};
+
+std :: string PhoneBook :: getName(int index) {
+		
+	return (contact[index].get_name());	
 };
