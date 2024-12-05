@@ -6,58 +6,47 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/04 17:33:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:46:45 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-class PhoneBook {
-
-	public :
-
-		int index;
-
-	PhoneBook(int i);
-	~PhoneBook(void);
-	
-};
-
-PhoneBook :: PhoneBook(int i) : index(i) {
+PhoneBook :: PhoneBook(void) {
 
 	std :: cout << "phonebook" << std :: endl;
 
-	
+	for (int i = 0; i < 8; i++) {
+		PhoneBook :: contact[i].set_record_nbr(0);
+		PhoneBook :: contact[i].set_index(i);
+	}
 };
 
 
 PhoneBook :: ~PhoneBook(void) {
 
 	std :: cout << "destroy" << std :: endl;
+};
 
+int PhoneBook :: get_record_order(int i) {
+
+	return (contact[i].get_record_nbr());
 };
 
 
+void PhoneBook :: set_record_order(int index, int new_index) {
+
+	PhoneBook :: contact[index].set_record_nbr(new_index);
+	return ;
+};
 
 
-
-
-int main(int argc, char *argv[]) {
+int PhoneBook :: get_index(int index) {
 	
-	PhoneBook Book[3] = { 0, 1 ,2 };
-	if (argc > 1)
-		std :: cout << argv[1];
-	
-	
+	return (contact[index].get_contact_index());
+};
 
-	
-	std :: cout << Book[0].index << std :: endl;
-	std :: cout << Book[1].index << std :: endl;
-	std :: cout << Book[2].index << std :: endl;
-	Book[1].index = 8;
-	std :: cout << Book[1].index << std :: endl;
+void PhoneBook :: setName(std :: string input, int index) {
 
-
-	
-	return (0);
-}
+	PhoneBook :: contact[index].set_name(input);	
+};

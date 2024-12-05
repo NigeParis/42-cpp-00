@@ -16,7 +16,7 @@ CC=c++
 
 
 SRC_DIR = src/
-SRC = PhoneBook.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp Add.cpp
 OBJ_DIR = build/
 
 ###############################################################################
