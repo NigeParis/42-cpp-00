@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 18:02:54 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/06 09:20:20 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "Contact.hpp"
 
+#include <stdio.h>
 
 class PhoneBook {
 

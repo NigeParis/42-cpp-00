@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 18:11:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/06 09:23:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PhoneBook :: PhoneBook(void) {
 	std :: cout << "phonebook" << std :: endl;
 
 	for (int i = 0; i < 8; i++) {
-		PhoneBook :: contact[i].set_record_nbr(0);
+		PhoneBook :: contact[i].set_record_nbr(-1);
 		PhoneBook :: contact[i].set_index(i);
 	}
 };
@@ -47,7 +47,9 @@ int PhoneBook :: get_index(int index) {
 };
 
 void PhoneBook :: setName(std :: string input, int index) {
-
+	
+	if (index < 0)
+		return ;
 	PhoneBook :: contact[index].set_name(input);	
 };
 
