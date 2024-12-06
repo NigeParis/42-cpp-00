@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/05 18:07:32 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:10:33 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,25 @@ class Contact {
 
 	public :
 	
-	Contact(void);
-	~Contact(void);
-	
-	void set_record_nbr(int i);
-	void set_index(int index);
-	void set_name(std :: string input);
-	std :: string get_name(void);
-	int get_record_nbr(void);
-	int get_contact_index(void);
+		Contact(void);
+		~Contact(void);
+		
+		void set_index(int index);
+		void setRecordNbr(int i);
+		void setName(std :: string input);
+		void setLastName(std :: string input);
+		void setNickName(std :: string input);
+		void setPhoneNbr(std :: string input);
+		
+		int getContactIndex(void);
+		int getRecordNbr(void);
+		std :: string getName(void);
+		std :: string getLastName(void);
+		std :: string getNickName(void);
+		std :: string getPhoneNbr(void);
 
 	private :
-	
+
 		int contact_index;
 		int last_changed_index;
 		std :: string name;
