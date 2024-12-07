@@ -6,16 +6,15 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 21:47:29 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 22:50:33 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
-#include <bits/stdc++.h>
 
+#include <iostream>
 #include "Contact.hpp"
 
 #include <stdio.h>
@@ -50,20 +49,9 @@ class PhoneBook {
 };
 
 
-int	add(PhoneBook *phonebook);
-int	isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex);
-int	isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex);
-int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex);
-int	nextRecordToAdd(PhoneBook *phonebook);
-int inputName(PhoneBook *phonebook, int contactIndex);
-int inputLastName(PhoneBook *phonebook, int contactIndex);
-int inputNickName(PhoneBook *phonebook, int contactIndex);
-int inputPhoneNbr(PhoneBook *phonebook, int contactIndex);
-int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex);
 
-std :: string removeAllSpaces(std :: string input);
-std :: string removeLeadingSpaces(std :: string input);
-std :: string removeEndingSpaces(std::string input);
+
+
 
 
 

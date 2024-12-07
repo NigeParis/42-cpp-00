@@ -6,11 +6,11 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:45:08 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 21:47:24 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 22:37:52 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Input_phonenbr.hpp"
 
 static int getPhoneNbr(PhoneBook *phonebook, std :: string input, int contactIndex) {
 

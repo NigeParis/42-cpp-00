@@ -6,11 +6,11 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:41:32 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 21:45:18 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 22:35:20 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Input_nickname.hpp"
 
 static int getNickName(PhoneBook *phonebook, std :: string input, int contactIndex) {
 

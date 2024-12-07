@@ -6,11 +6,11 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:37:01 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 21:45:03 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 22:20:19 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Input_lastname.hpp"
 
 static int getLastName(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
@@ -34,6 +34,7 @@ int  inputLastName(PhoneBook *phonebook, int contactIndex) {
         return (2);
     input = removeLeadingSpaces(input);
     input = removeEndingSpaces(input);
+
 	getLastName(phonebook, input, contactIndex);
 	return (0);
 }
