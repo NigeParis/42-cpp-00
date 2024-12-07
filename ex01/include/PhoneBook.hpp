@@ -6,22 +6,19 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 22:50:33 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 23:15:01 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-
 #include <iostream>
 #include "Contact.hpp"
 
-#include <stdio.h>
-
+#ifndef MAX_RECORD
 #define  MAX_RECORD 8
-
-
+#endif
 
 class PhoneBook {
 
@@ -47,16 +44,5 @@ class PhoneBook {
 
 		Contact contact[MAX_RECORD];
 };
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:33:28 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 22:43:09 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 23:05:13 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@
 #include "Add_tools.hpp"
 
 int inputNickName(PhoneBook *phonebook, int contactIndex);
-
 
 #endif 
