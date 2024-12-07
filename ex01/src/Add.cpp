@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Add.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:48:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/06 17:53:56 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:14:37 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <bits/stdc++.h>
 
-static int getName(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
-	if (input.empty())
-		return (1);
-	phonebook->setName(input, contactIndex);	
-	return (0);
-}
 
 static int getLastName(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
@@ -40,66 +33,87 @@ static int getPhoneNbr(PhoneBook *phonebook, std :: string input, int contactInd
 }
 
 
-std :: string  removeSpaces(std :: string input) {
-	std::string::iterator end_pos = std::remove(input.begin(), input.end(), ' ');
-	input.erase(end_pos, input.end());
-	return (input);
-}
 
 
 
- int add(PhoneBook *phonebook)
-{
+
+
+int  inputLastName(PhoneBook *phonebook, int contactIndex) {
+
 	std :: string input;
-	int contactIndex;
-	
-	contactIndex = nextRecordToAdd(phonebook);
-	
-	std :: cout << "\033[34menter name\033[0m : ";
+
+	std :: cout << "\033[32menter last name\033[0m : ";
 	std :: getline(std :: cin, input);	
 	if (std :: cin.eof())
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
-		return (0);
-	while (getName(phonebook, input, contactIndex));
+		return (2);
+	getLastName(phonebook, input, contactIndex);
+	return (0);
+}
 
-	std :: cout << "\033[32menter last name\033[0m : ";
-	std :: getline(std :: cin, input);	
-	if (std :: cin.eof())			
-		return (1);
-	if (isEmptyInput(phonebook, input, contactIndex))
-		return (0);
-	while (getLastName(phonebook, input, contactIndex));
-	
+
+
+int  inputNickName(PhoneBook *phonebook, int contactIndex) {
+
+	std :: string input;
+
 	std :: cout << "\033[33menter nick name\033[0m : ";
 	std :: getline(std :: cin, input);	
-	if (std :: cin.eof())			
+	if (std :: cin.eof())
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
-		return (0);
-	while (getNickName(phonebook, input, contactIndex));
+		return (2);
+	getNickName(phonebook, input, contactIndex);
+	return (0);
+}
+
+
+
+int  inputPhoneNbr(PhoneBook *phonebook, int contactIndex) {
+
+	std :: string input;
 
 	std :: cout << "\033[36menter phone number\033[0m : ";
 	std :: getline(std :: cin, input);	
 	if (std :: cin.eof())			
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
-		return (0);
-
+		return (2);
 	input = removeSpaces(input);
 	if (input.empty())
-		return (0);
-	
-	std :: cout << "'"<<input<<"'" << std :: endl;	
-
-		
+		return (2);		
 	if (isPhoneInput(phonebook, input, contactIndex))
 		return (0);
-	while (getPhoneNbr(phonebook, input, contactIndex));
+	getPhoneNbr(phonebook, input, contactIndex);
+	return (0);
+}
 
+
+
+
+ int add(PhoneBook *phonebook)
+ 
+{
+	int contactIndex;
+	int error;
 	
-
-			
+	contactIndex = nextRecordToAdd(phonebook);
+	
+	if ((error = inputName(phonebook, contactIndex))) {
+		return (error);
+	}
+	if ((error = inputLastName(phonebook, contactIndex))) {
+		return (error);
+	}
+	if ((error = inputNickName(phonebook, contactIndex))) {
+		return (error);
+	}
+	
+	if ((error = inputPhoneNbr(phonebook, contactIndex))) {
+		return (error);
+	}
+	
 	return (0);
 }
 

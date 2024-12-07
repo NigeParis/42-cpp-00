@@ -3,14 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   Add_tools.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/06 15:56:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:24:39 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+std :: string  removeSpaces(std :: string input) {
+	std::string::iterator end_pos = std::remove(input.begin(), input.end(), ' ');
+	input.erase(end_pos, input.end());
+	return (input);
+}
+
+
+static void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
+	
+		int index;
+
+		index = phonebook->getRecordOrder(contactIndex);
+		index--;
+		for (int i = 0; i < MAX_RECORD; i++) {
+			phonebook->setRecordOrder(i, index);
+		}
+}
+
+static void eraseContactInfo(PhoneBook *phonebook, int contactIndex) {
+
+	if (!phonebook->getName(contactIndex).empty())		
+			phonebook->setName("", contactIndex);
+	if (!phonebook->getLastName(contactIndex).empty())
+		phonebook->setLastName("", contactIndex);
+	if (!phonebook->getNickName(contactIndex).empty())
+		phonebook->setNickName("", contactIndex);
+	if (!phonebook->getPhoneNbr(contactIndex).empty())
+		phonebook->setPhoneNbr("", contactIndex);
+	
+}
+
+
+
 
 int	 nextRecordToAdd(PhoneBook *phonebook) {
 
@@ -42,26 +76,12 @@ int	 nextRecordToAdd(PhoneBook *phonebook) {
 
 int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
-	int index;
-	
 	if (!input.size()) {
 		std :: cout << "\033[31mError Contact contains an empty field "\
-			<< ": Contact has been saved ! \033[0m" << std :: endl;
+			<< ": Contact has not been saved ! \033[0m" << std :: endl;
 
-		if (!phonebook->getName(contactIndex).empty())		
-			phonebook->setName("", contactIndex);
-		if (!phonebook->getLastName(contactIndex).empty())
-			phonebook->setLastName("", contactIndex);
-		if (!phonebook->getNickName(contactIndex).empty())
-			phonebook->setNickName("", contactIndex);
-		if (!phonebook->getPhoneNbr(contactIndex).empty())
-			phonebook->setPhoneNbr("", contactIndex);
-		
-		index = phonebook->getRecordOrder(contactIndex);
-		index--;
-		for (int i = 0; i < MAX_RECORD; i++) {
-			phonebook->setRecordOrder(i, index);
-		}
+		eraseContactInfo(phonebook, contactIndex);
+		resetRecordOrder(phonebook, contactIndex);
 			
 		return (1);
 	}
@@ -71,28 +91,39 @@ int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
 int isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
-	int index;
 		
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
-		if (!isdigit(input[i])){
+		if (!std :: isdigit(input[i])) {
+			
 			std :: cout << "\033[31mError telephone contains not only numbers "\
-						<< ": Contact has been saved ! \033[0m" << std :: endl;
-			if (!phonebook->getName(contactIndex).empty())		
-				phonebook->setName("", contactIndex);
-			if (!phonebook->getLastName(contactIndex).empty())
-				phonebook->setLastName("", contactIndex);
-			if (!phonebook->getNickName(contactIndex).empty())
-				phonebook->setNickName("", contactIndex);
-			if (!phonebook->getPhoneNbr(contactIndex).empty())
-				phonebook->setPhoneNbr("", contactIndex);
-		
-			index = phonebook->getRecordOrder(contactIndex);
-			index--;
-			for (int i = 0; i < MAX_RECORD; i++) {
-				phonebook->setRecordOrder(i, index);
-			}	
-		return (1);			
+						<< ": Contact has not been saved ! \033[0m" << std :: endl;
+						
+			eraseContactInfo(phonebook, contactIndex);
+			resetRecordOrder(phonebook, contactIndex);
+			return (1);			
 		}		
 	}
 	return (0);
 }
+
+
+
+
+int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
+
+		
+	for (int i = 0; i < static_cast<int>(input.size()); i++) {
+		if (!std :: isprint(input[i])) {
+			
+			std :: cout << "\033[31mError input contains non-printable characters "\
+						<< ": Contact has not been saved ! \033[0m" << std :: endl;
+						
+			eraseContactInfo(phonebook, contactIndex);
+			resetRecordOrder(phonebook, contactIndex);
+			return (1);			
+		}		
+	}
+	return (0);
+}
+
+

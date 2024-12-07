@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/06 16:05:07 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:18:56 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
+#include <bits/stdc++.h>
+
 #include "Contact.hpp"
 
 #include <stdio.h>
@@ -52,6 +54,9 @@ int	add(PhoneBook *phonebook);
 int	isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex);
 int	isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex);
 int	nextRecordToAdd(PhoneBook *phonebook);
+std :: string  removeSpaces(std :: string input);
+int inputName(PhoneBook *phonebook, int contactIndex);
+int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex);
 
 
 #endif
