@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 18:18:56 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 18:46:50 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,16 @@ class PhoneBook {
 int	add(PhoneBook *phonebook);
 int	isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex);
 int	isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex);
+int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex);
 int	nextRecordToAdd(PhoneBook *phonebook);
 std :: string  removeSpaces(std :: string input);
 int inputName(PhoneBook *phonebook, int contactIndex);
-int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex);
+int inputLastName(PhoneBook *phonebook, int contactIndex);
+int inputNickName(PhoneBook *phonebook, int contactIndex);
+int inputPhoneNbr(PhoneBook *phonebook, int contactIndex);
+
+
+
 
 
 #endif
