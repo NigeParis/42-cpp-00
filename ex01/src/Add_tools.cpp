@@ -6,17 +6,33 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 18:24:39 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 21:47:27 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std :: string  removeSpaces(std :: string input) {
+std :: string  removeAllSpaces(std :: string input) {
 	std::string::iterator end_pos = std::remove(input.begin(), input.end(), ' ');
 	input.erase(end_pos, input.end());
 	return (input);
 }
+
+std::string removeLeadingSpaces(std::string input) {
+
+    std::string::size_type start_pos = input.find_first_not_of(' ');
+    return input.substr(start_pos);
+}
+
+std::string removeEndingSpaces(std::string input) {
+
+    std::string::size_type start_pos = input.find_last_not_of(' ');
+    input.erase(start_pos + 1);
+    return (input);
+}
+
+
+
 
 
 static void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
@@ -106,10 +122,7 @@ int isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 	return (0);
 }
 
-
-
-
-int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
 		
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
@@ -125,5 +138,30 @@ int isPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex
 	}
 	return (0);
 }
+
+
+
+
+int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex) {
+
+	int flag = 1;
+		
+	for (int i = 0; i < static_cast<int>(input.size()); i++) {
+		if (input[i] != ' ')
+			flag = 0;
+	}
+	if (flag) {
+	
+		std :: cout << "\033[31mError input contains only spaces "\
+					<< ": Contact has not been saved ! \033[0m" << std :: endl;
+						
+		eraseContactInfo(phonebook, contactIndex);
+		resetRecordOrder(phonebook, contactIndex);
+		return (1);			
+	}		
+	return (0);
+}
+
+
 
 

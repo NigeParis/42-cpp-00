@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:41:32 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 18:49:08 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 21:45:18 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,13 @@ int  inputNickName(PhoneBook *phonebook, int contactIndex) {
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
 		return (2);
-    if (isPrintableInput(phonebook, input, contactIndex))
+    if (isNotPrintableInput(phonebook, input, contactIndex))
         return (2);
+    if (isNotOnlySpaces(phonebook, input, contactIndex))
+        return (2);
+    input = removeLeadingSpaces(input);
+    input = removeEndingSpaces(input);
 	getNickName(phonebook, input, contactIndex);
 	return (0);
 }
+

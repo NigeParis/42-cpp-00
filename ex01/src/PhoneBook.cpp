@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/06 16:04:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:57:26 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook :: PhoneBook(void) {
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < MAX_RECORD; i++) {
 		PhoneBook :: contact[i].setRecordNbr(-1);
 		PhoneBook :: contact[i].set_index(i);
 	}

@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:45:08 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 18:45:52 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/07 21:47:24 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ int  inputPhoneNbr(PhoneBook *phonebook, int contactIndex) {
 	std :: getline(std :: cin, input);	
 	if (std :: cin.eof())			
 		return (1);
+	input = removeAllSpaces(input);
 	if (isEmptyInput(phonebook, input, contactIndex))
-		return (2);
-	input = removeSpaces(input);
-	if (input.empty())
-		return (2);		
+		return (2);	
 	if (isPhoneInput(phonebook, input, contactIndex))
 		return (0);
 	getPhoneNbr(phonebook, input, contactIndex);
