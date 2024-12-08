@@ -6,12 +6,24 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 11:10:56 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:30:20 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Add.hpp"
+
+void debug_display(PhoneBook *phonebook) {
+	
+		for (int i = 0; i < 8; i++) 
+			std :: cout << "contact[" << i <<"] name : " << phonebook->getName(i) <<  " lastname : " \
+			<< phonebook->getLastName(i) << " nick name : " << phonebook->getNickName(i) \
+			<< " phone num : " << phonebook->getPhoneNbr(i) \
+			<< " secret : " << phonebook->getSecret(i) \
+			<< " index : " << phonebook->getRecordOrder(i) << std :: endl;
+}
+
+
 
 int main(void) {
 	
@@ -37,12 +49,8 @@ int main(void) {
 
 
 
-		for (int i = 0; i < 8; i++) 
-			std :: cout << "contact[" << i <<"] name : " << phonebook.getName(i) <<  " lastname : " \
-			<< phonebook.getLastName(i) << " nick name : " << phonebook.getNickName(i) \
-			<< " phone num : " << phonebook.getPhoneNbr(i) \
-			<< " secret : " << phonebook.getSecret(i) \
-			<< " index : " << phonebook.getRecordOrder(i) << std :: endl;
+		debug_display(&phonebook); 
+	
 	}
 
 
