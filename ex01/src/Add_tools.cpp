@@ -6,16 +6,21 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 22:31:48 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:04:46 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Add_tools.hpp"
 
 std :: string  removeAllSpaces(std :: string input) {
-	std::string::iterator end_pos = std::remove(input.begin(), input.end(), ' ');
-	input.erase(end_pos, input.end());
-	return (input);
+
+	std :: string result;
+	for (size_t i = 0; i < input.size(); i++) {
+		if (input[i] != ' ') {
+			result += input[i];
+		}
+	}
+	return (result);
 }
 
 std::string removeLeadingSpaces(std::string input) {
@@ -30,10 +35,6 @@ std::string removeEndingSpaces(std::string input) {
     input.erase(start_pos + 1);
     return (input);
 }
-
-
-
-
 
 static void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
 	
@@ -56,11 +57,10 @@ static void eraseContactInfo(PhoneBook *phonebook, int contactIndex) {
 		phonebook->setNickName("", contactIndex);
 	if (!phonebook->getPhoneNbr(contactIndex).empty())
 		phonebook->setPhoneNbr("", contactIndex);
+	if (!phonebook->getSecret(contactIndex).empty())
+		phonebook->setSecret("", contactIndex);
 	
 }
-
-
-
 
 int	 nextRecordToAdd(PhoneBook *phonebook) {
 
@@ -93,7 +93,9 @@ int	 nextRecordToAdd(PhoneBook *phonebook) {
 int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
 	if (!input.size()) {
-		std :: cout << "\033[31mError Contact contains an empty field "\
+	
+		clearScreen();	
+		std :: cout << "\033[31mError last input contains an empty field "\
 			<< ": Contact has not been saved ! \033[0m" << std :: endl;
 
 		eraseContactInfo(phonebook, contactIndex);
@@ -105,13 +107,14 @@ int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 }
  
 
-int isPhoneInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isNotPhoneNbr(PhoneBook *phonebook, std :: string input, int contactIndex) {
 
 		
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
 		if (!std :: isdigit(input[i])) {
-			
-			std :: cout << "\033[31mError telephone contains not only numbers "\
+		
+			clearScreen();	
+			std :: cout << "\033[31mError telephone number contains not only numbers "\
 						<< ": Contact has not been saved ! \033[0m" << std :: endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
@@ -128,7 +131,8 @@ int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIn
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
 		if (!std :: isprint(input[i])) {
 			
-			std :: cout << "\033[31mError input contains non-printable characters "\
+			clearScreen();		
+			std :: cout << "\033[31mError last input contains non-printable characters "\
 						<< ": Contact has not been saved ! \033[0m" << std :: endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
@@ -151,8 +155,8 @@ int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex)
 			flag = 0;
 	}
 	if (flag) {
-	
-		std :: cout << "\033[31mError input contains only spaces "\
+		clearScreen();
+		std :: cout << "\033[31mError last input contains only spaces "\
 					<< ": Contact has not been saved ! \033[0m" << std :: endl;
 						
 		eraseContactInfo(phonebook, contactIndex);
@@ -163,5 +167,9 @@ int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex)
 }
 
 
+void clearScreen(void) {
+
+	system("clear");
+}
 
 

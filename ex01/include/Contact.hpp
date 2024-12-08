@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 23:00:21 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 10:35:39 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Contact {
 		void setLastName(std :: string input);
 		void setNickName(std :: string input);
 		void setPhoneNbr(std :: string input);
+		void setSecret(std :: string input);
 		
 		int getContactIndex(void);
 		int getRecordNbr(void);
@@ -35,6 +36,7 @@ class Contact {
 		std :: string getLastName(void);
 		std :: string getNickName(void);
 		std :: string getPhoneNbr(void);
+		std :: string getSecret(void);
 
 	private :
 

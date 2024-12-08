@@ -6,11 +6,12 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 18:57:26 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:12:25 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Add_tools.hpp"
 
 PhoneBook :: PhoneBook(void) {
 	for (int i = 0; i < MAX_RECORD; i++) {
@@ -21,7 +22,7 @@ PhoneBook :: PhoneBook(void) {
 
 
 PhoneBook :: ~PhoneBook(void) {
-	std :: cout << "destroy" << std :: endl;
+	clearScreen();
 };
 
 
@@ -90,4 +91,17 @@ void PhoneBook :: setPhoneNbr(std :: string input, int index) {
 std :: string PhoneBook :: getPhoneNbr(int index) {
 		
 	return (contact[index].getPhoneNbr());	
+};
+
+
+void PhoneBook :: setSecret(std :: string input, int index) {
+	
+	if (index < 0)
+		return ;
+	PhoneBook :: contact[index].setSecret(input);	
+};
+
+std :: string PhoneBook :: getSecret(int index) {
+		
+	return (contact[index].getSecret());	
 };

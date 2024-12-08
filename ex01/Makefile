@@ -17,7 +17,7 @@ CC=c++
 
 SRC_DIR = src/
 SRC = main.cpp PhoneBook.cpp Contact.cpp Add.cpp Add_tools.cpp Input_name.cpp
-SRC += Input_lastname.cpp Input_nickname.cpp Input_phonenbr.cpp
+SRC += Input_lastname.cpp Input_nickname.cpp Input_phonenbr.cpp Input_secret.cpp
 OBJ_DIR = build/
 
 ###############################################################################

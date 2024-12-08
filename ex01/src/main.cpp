@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 23:15:09 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:10:56 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void) {
 	
 	std :: string input;
 	
-	
+	clearScreen();
 	while (1) {
 		
 
@@ -27,6 +27,7 @@ int main(void) {
 		std :: getline(std :: cin, input);
 		if (std :: cin.eof())			
 			break ;
+		clearScreen();
 	
 		if (input == "ADD")
 			if (add(&phonebook) == 1)
@@ -40,6 +41,7 @@ int main(void) {
 			std :: cout << "contact[" << i <<"] name : " << phonebook.getName(i) <<  " lastname : " \
 			<< phonebook.getLastName(i) << " nick name : " << phonebook.getNickName(i) \
 			<< " phone num : " << phonebook.getPhoneNbr(i) \
+			<< " secret : " << phonebook.getSecret(i) \
 			<< " index : " << phonebook.getRecordOrder(i) << std :: endl;
 	}
 

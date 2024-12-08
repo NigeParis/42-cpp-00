@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 23:15:01 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 11:10:01 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class PhoneBook {
 		void setLastName(std :: string input, int index);
 		void setNickName(std :: string input, int index);
 		void setPhoneNbr(std :: string input, int index);
+		void setSecret(std :: string input, int index);
 
 		int get_index(int index);
 		int getRecordOrder(int contact_index);
@@ -39,6 +40,8 @@ class PhoneBook {
 		std :: string getLastName(int index);
 		std :: string getNickName(int index);
 		std :: string getPhoneNbr(int index);
+		std :: string getSecret(int index);
+
 
 	private :
 
