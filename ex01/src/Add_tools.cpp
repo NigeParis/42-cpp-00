@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 18:32:02 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 18:56:40 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,20 +144,14 @@ int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIn
 }
 
 
-
-
 int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex) {
-
-	int flag = 1;
 		
 	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++ ) {
 		
 		if (*ch != ' ') {
-			flag = 0;
-			break ;
+			return (0);
 		}
 	}
-	if (flag) {
 		clearScreen();
 		std :: cout << "\033[31mError last input contains only spaces "\
 					<< ": Contact has not been saved ! \033[0m" << std :: endl;
@@ -165,8 +159,6 @@ int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex)
 		eraseContactInfo(phonebook, contactIndex);
 		resetRecordOrder(phonebook, contactIndex);
 		return (1);			
-	}		
-	return (0);
 }
 
 
@@ -178,18 +170,10 @@ void clearScreen(void) {
 
 int isOnlySpaces(std :: string input) {
 
-	int flag = 1;
-
 	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++) {
        if (*ch != ' ') {
-           flag = 0;
-           break;
+			return (0);
        }
     }
-
-	if (flag) {
-		
-		return (1);			
-	}		
-	return (0);
+	return (1);					
 }
