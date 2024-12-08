@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:26:00 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/08 11:20:28 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 18:15:01 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void clearScreen(void);
 std :: string removeAllSpaces(std :: string input);
 std :: string removeLeadingSpaces(std :: string input);
 std :: string removeEndingSpaces(std::string input);
+int isOnlySpaces(std :: string input);
+
 
 
 

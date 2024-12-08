@@ -6,7 +6,7 @@
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 11:23:20 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/08 18:32:02 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,12 @@ int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex)
 
 	int flag = 1;
 		
-	for (int i = 0; i < static_cast<int>(input.size()); i++) {
-		if (input[i] != ' ')
+	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++ ) {
+		
+		if (*ch != ' ') {
 			flag = 0;
+			break ;
+		}
 	}
 	if (flag) {
 		clearScreen();
@@ -173,3 +176,20 @@ void clearScreen(void) {
 }
 
 
+int isOnlySpaces(std :: string input) {
+
+	int flag = 1;
+
+	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++) {
+       if (*ch != ' ') {
+           flag = 0;
+           break;
+       }
+    }
+
+	if (flag) {
+		
+		return (1);			
+	}		
+	return (0);
+}
