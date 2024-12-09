@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_secret.cpp                                   :+:      :+:    :+:   */
+/*   InputName.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 10:29:23 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/08 11:17:24 by nige42           ###   ########.fr       */
+/*   Created: 2024/12/07 17:53:57 by nige42            #+#    #+#             */
+/*   Updated: 2024/12/09 10:43:17 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Input_secret.hpp"
+#include "InputName.hpp"
 
-static int getSecret(PhoneBook *phonebook, std :: string input, int contactIndex) {
+
+
+
+
+
+
+
+static int getName(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	if (input.empty())
 		return (1);
-	phonebook->setSecret(input, contactIndex);	
+	phonebook->setName(input, contactIndex);	
 	return (0);
 }
 
-int  inputSecret(PhoneBook *phonebook, int contactIndex) {
+int  inputName(PhoneBook *phonebook, int contactIndex) {
 
-	std :: string input;
+	std::string input;
 
-	std :: cout << "\033[41menter secret\033[0m : ";
-	std :: getline(std :: cin, input);	
-	if (std :: cin.eof())
+	std::cout << "\033[34menter name\033[0m : ";
+	std::getline(std::cin, input);	
+	if (std::cin.eof())
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
 		return (2);
@@ -36,7 +43,12 @@ int  inputSecret(PhoneBook *phonebook, int contactIndex) {
         return (2);
     input = removeLeadingSpaces(input);
     input = removeEndingSpaces(input);
+	if (isNotAlpha(phonebook, input, contactIndex))
+		return (2);
+	input = capitaliseInput(input);
+	input = removeExtraSpaces(input);
+	input = addHyphen(input);
 
-	getSecret(phonebook, input, contactIndex);
+	getName(phonebook, input, contactIndex);
 	return (0);
 }

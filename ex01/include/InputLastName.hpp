@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_phonenbr.hpp                                 :+:      :+:    :+:   */
+/*   InputLastName.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 22:36:22 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 23:05:18 by nige42           ###   ########.fr       */
+/*   Created: 2024/12/07 22:17:21 by nige42            #+#    #+#             */
+/*   Updated: 2024/12/09 16:05:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_PHONENBR_HPP
-#define INPUT_PHONENBR_HPP
+#ifndef INPUT_LASTNAME_HPP
+#define INPUT_LASTNAME_HPP
 
 #include "PhoneBook.hpp"
-#include "Add_tools.hpp"
+#include "AddTools.hpp"
 
-int inputPhoneNbr(PhoneBook *phonebook, int contactIndex);
+int inputLastName(PhoneBook *phonebook, int contactIndex);
 
 #endif

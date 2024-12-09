@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 10:35:39 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 17:05:41 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,31 @@ class Contact {
 		Contact(void);
 		~Contact(void);
 		
-		void set_index(int index);
+		void setIndex(int index);
 		void setRecordNbr(int i);
-		void setName(std :: string input);
-		void setLastName(std :: string input);
-		void setNickName(std :: string input);
-		void setPhoneNbr(std :: string input);
-		void setSecret(std :: string input);
+		void setName(std::string input);
+		void setLastName(std::string input);
+		void setNickName(std::string input);
+		void setPhoneNbr(std::string input);
+		void setSecret(std::string input);
 		
 		int getContactIndex(void);
 		int getRecordNbr(void);
-		std :: string getName(void);
-		std :: string getLastName(void);
-		std :: string getNickName(void);
-		std :: string getPhoneNbr(void);
-		std :: string getSecret(void);
+		std::string getName(void);
+		std::string getLastName(void);
+		std::string getNickName(void);
+		std::string getPhoneNbr(void);
+		std::string getSecret(void);
 
 	private :
 
-		int contact_index;
-		int last_changed_index;
-		std :: string name;
-		std :: string lastname;
-		std :: string nickname;
-		std :: string phone_nbr;
-		std :: string secret;
+		int _contact_index;
+		int _last_changed_index;
+		std::string _name;
+		std::string _lastname;
+		std::string _nickname;
+		std::string _phone_nbr;
+		std::string _secret;
 	
 };
 

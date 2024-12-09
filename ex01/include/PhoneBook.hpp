@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:07:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 11:10:01 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 16:06:20 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,23 @@ class PhoneBook {
 		~PhoneBook(void);
 		
 		void setRecordOrder(int index, int new_index);
-		void setName(std :: string input, int index);
-		void setLastName(std :: string input, int index);
-		void setNickName(std :: string input, int index);
-		void setPhoneNbr(std :: string input, int index);
-		void setSecret(std :: string input, int index);
+		void setName(std::string input, int index);
+		void setLastName(std::string input, int index);
+		void setNickName(std::string input, int index);
+		void setPhoneNbr(std::string input, int index);
+		void setSecret(std::string input, int index);
 
-		int get_index(int index);
+		int getIndex(int index);
 		int getRecordOrder(int contact_index);
-		std :: string getName(int index);
-		std :: string getLastName(int index);
-		std :: string getNickName(int index);
-		std :: string getPhoneNbr(int index);
-		std :: string getSecret(int index);
-
+		std::string getName(int index);
+		std::string getLastName(int index);
+		std::string getNickName(int index);
+		std::string getPhoneNbr(int index);
+		std::string getSecret(int index);
 
 	private :
 
-		Contact contact[MAX_RECORD];
+		Contact _contact[MAX_RECORD];
 };
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_phonenbr.cpp                                 :+:      :+:    :+:   */
+/*   InputPhoneNbr.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Input_phonenbr.hpp"
+#include "InputPhoneNbr.hpp"
 
-static int getPhoneNbr(PhoneBook *phonebook, std :: string input, int contactIndex) {
+static int getPhoneNbr(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	phonebook->setPhoneNbr(input, contactIndex);	
 	return (0);
@@ -20,11 +20,11 @@ static int getPhoneNbr(PhoneBook *phonebook, std :: string input, int contactInd
 
 int  inputPhoneNbr(PhoneBook *phonebook, int contactIndex) {
 
-	std :: string input;
+	std::string input;
 
-	std :: cout << "\033[36menter phone number\033[0m : ";
-	std :: getline(std :: cin, input);	
-	if (std :: cin.eof())			
+	std::cout << "\033[36menter phone number\033[0m : ";
+	std::getline(std::cin, input);	
+	if (std::cin.eof())			
 		return (1);
 	input = removeAllSpaces(input);
 	if (isEmptyInput(phonebook, input, contactIndex))

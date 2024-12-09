@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Search.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 16:37:26 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/08 17:42:08 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 16:06:43 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #define SEARCH_HPP
 
 #include "PhoneBook.hpp"
-#include "Search_tools.hpp"
+#include "SearchTools.hpp"
+#include "AddTools.hpp"
+#include <stdlib.h>
 
-int search(PhoneBook *phonebook, std :: string input);
+int search(PhoneBook *phonebook, std::string input);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Add.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:21:56 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/08 10:39:53 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 16:05:05 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 #define ADD_HPP
 
 #include "PhoneBook.hpp"
-#include "Input_name.hpp"
-#include "Input_lastname.hpp"
-#include "Input_nickname.hpp"
-#include "Input_phonenbr.hpp"
-#include "Input_secret.hpp"
-#include "Add_tools.hpp"
+#include "InputName.hpp"
+#include "InputLastName.hpp"
+#include "InputNickName.hpp"
+#include "InputPhoneNbr.hpp"
+#include "InputSecret.hpp"
+#include "AddTools.hpp"
 
 int	add(PhoneBook *phonebook);
-
 
 #endif

@@ -89,6 +89,21 @@
 		"typeindex": "cpp",
 		"unordered_set": "cpp",
 		"valarray": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"any": "cpp",
+		"chrono": "cpp",
+		"codecvt": "cpp",
+		"coroutine": "cpp",
+		"cuchar": "cpp",
+		"source_location": "cpp",
+		"shared_mutex": "cpp",
+		"stop_token": "cpp",
+		"barrier": "cpp",
+		"latch": "cpp",
+		"semaphore": "cpp",
+		"syncstream": "cpp",
+		"expected": "cpp",
+		"spanstream": "cpp",
+		"stacktrace": "cpp"
 	}
 }

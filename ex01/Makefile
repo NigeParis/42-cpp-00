@@ -16,9 +16,9 @@ CC=c++
 
 
 SRC_DIR = src/
-SRC = main.cpp PhoneBook.cpp Contact.cpp Add.cpp Add_tools.cpp Input_name.cpp
-SRC += Input_lastname.cpp Input_nickname.cpp Input_phonenbr.cpp Input_secret.cpp
-SRC += Search.cpp Search_tools.cpp
+SRC = Main.cpp PhoneBook.cpp Contact.cpp Add.cpp AddTools.cpp InputName.cpp
+SRC += InputLastName.cpp InputNickName.cpp InputPhoneNbr.cpp InputSecret.cpp
+SRC += Search.cpp SearchTools.cpp
 
 OBJ_DIR = build/
 

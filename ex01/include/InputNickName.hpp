@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_nickname.hpp                                 :+:      :+:    :+:   */
+/*   InputNickName.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:33:28 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 23:05:13 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 11:32:39 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define INPUT_NICKNAME_HPP
 
 #include "PhoneBook.hpp"
-#include "Add_tools.hpp"
+#include "AddTools.hpp"
 
 int inputNickName(PhoneBook *phonebook, int contactIndex);
 

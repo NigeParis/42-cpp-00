@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_name.cpp                                     :+:      :+:    :+:   */
+/*   InputLastName.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 17:53:57 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/07 22:16:28 by nige42           ###   ########.fr       */
+/*   Created: 2024/12/07 18:37:01 by nige42            #+#    #+#             */
+/*   Updated: 2024/12/09 11:11:43 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Input_name.hpp"
+#include "InputLastName.hpp"
 
-static int getName(PhoneBook *phonebook, std :: string input, int contactIndex) {
+static int getLastName(PhoneBook *phonebook, std::string input, int contactIndex) {
 
-	if (input.empty())
-		return (1);
-	phonebook->setName(input, contactIndex);	
+	phonebook->setLastName(input, contactIndex);	
 	return (0);
 }
 
-int  inputName(PhoneBook *phonebook, int contactIndex) {
+int  inputLastName(PhoneBook *phonebook, int contactIndex) {
 
-	std :: string input;
+	std::string input;
 
-	std :: cout << "\033[34menter name\033[0m : ";
-	std :: getline(std :: cin, input);	
-	if (std :: cin.eof())
+	std::cout << "\033[32menter last name\033[0m : ";
+	std::getline(std::cin, input);	
+	if (std::cin.eof())
 		return (1);
 	if (isEmptyInput(phonebook, input, contactIndex))
 		return (2);
@@ -36,7 +34,11 @@ int  inputName(PhoneBook *phonebook, int contactIndex) {
         return (2);
     input = removeLeadingSpaces(input);
     input = removeEndingSpaces(input);
+	if (isNotAlpha(phonebook, input, contactIndex))
+		return (2);
+	input = capitaliseInput(input);
+	input = removeExtraSpaces(input);
 
-	getName(phonebook, input, contactIndex);
+	getLastName(phonebook, input, contactIndex);
 	return (0);
 }

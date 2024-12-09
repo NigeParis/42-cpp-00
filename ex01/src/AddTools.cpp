@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Add_tools.cpp                                      :+:      :+:    :+:   */
+/*   AddTools.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:53:36 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/08 18:56:40 by nige42           ###   ########.fr       */
+/*   Updated: 2024/12/09 11:10:26 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Add_tools.hpp"
+#include "AddTools.hpp"
 
-std :: string  removeAllSpaces(std :: string input) {
+std::string  removeAllSpaces(std::string input) {
 
-	std :: string result;
+	std::string result;
 	for (size_t i = 0; i < input.size(); i++) {
 		if (input[i] != ' ') {
 			result += input[i];
@@ -76,7 +76,7 @@ int	 nextRecordToAdd(PhoneBook *phonebook) {
 		if (lastRecord <= phonebook->getRecordOrder(i)) {	
 
 			lastRecord = phonebook->getRecordOrder(i);
-			index = phonebook->get_index(i);
+			index = phonebook->getIndex(i);
 			nextRecord = lastRecord + 1;
 			if (nextRecord == MAX_RECORD)
 				lastRecord = -1;
@@ -90,13 +90,13 @@ int	 nextRecordToAdd(PhoneBook *phonebook) {
 }
 
 
-int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isEmptyInput(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	if (!input.size()) {
 	
 		clearScreen();	
-		std :: cout << "\033[31mError last input contains an empty field "\
-			<< ": Contact has not been saved ! \033[0m" << std :: endl;
+		std::cout << "\033[31mError last input contains an empty field "\
+			<< ": Contact has not been saved ! \033[0m" << std::endl;
 
 		eraseContactInfo(phonebook, contactIndex);
 		resetRecordOrder(phonebook, contactIndex);
@@ -107,15 +107,15 @@ int isEmptyInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
 }
  
 
-int isNotPhoneNbr(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isNotPhoneNbr(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 		
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
-		if (!std :: isdigit(input[i])) {
+		if (!std::isdigit(input[i])) {
 		
 			clearScreen();	
-			std :: cout << "\033[31mError telephone number contains not only numbers "\
-						<< ": Contact has not been saved ! \033[0m" << std :: endl;
+			std::cout << "\033[31mError telephone number contains not only numbers "\
+						<< ": Contact has not been saved ! \033[0m" << std::endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
 			resetRecordOrder(phonebook, contactIndex);
@@ -125,15 +125,15 @@ int isNotPhoneNbr(PhoneBook *phonebook, std :: string input, int contactIndex) {
 	return (0);
 }
 
-int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isNotPrintableInput(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 		
 	for (int i = 0; i < static_cast<int>(input.size()); i++) {
-		if (!std :: isprint(input[i])) {
+		if (!std::isprint(input[i])) {
 			
 			clearScreen();		
-			std :: cout << "\033[31mError last input contains non-printable characters "\
-						<< ": Contact has not been saved ! \033[0m" << std :: endl;
+			std::cout << "\033[31mError last input contains non-printable characters "\
+						<< ": Contact has not been saved ! \033[0m" << std::endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
 			resetRecordOrder(phonebook, contactIndex);
@@ -144,7 +144,7 @@ int isNotPrintableInput(PhoneBook *phonebook, std :: string input, int contactIn
 }
 
 
-int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex) {
+int isNotOnlySpaces(PhoneBook *phonebook, std::string input, int contactIndex) {
 		
 	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++ ) {
 		
@@ -153,8 +153,8 @@ int isNotOnlySpaces(PhoneBook *phonebook, std :: string input, int contactIndex)
 		}
 	}
 		clearScreen();
-		std :: cout << "\033[31mError last input contains only spaces "\
-					<< ": Contact has not been saved ! \033[0m" << std :: endl;
+		std::cout << "\033[31mError last input contains only spaces "\
+					<< ": Contact has not been saved ! \033[0m" << std::endl;
 						
 		eraseContactInfo(phonebook, contactIndex);
 		resetRecordOrder(phonebook, contactIndex);
@@ -168,7 +168,7 @@ void clearScreen(void) {
 }
 
 
-int isOnlySpaces(std :: string input) {
+int isOnlySpaces(std::string input) {
 
 	for (std::string::const_iterator ch = input.begin(); ch != input.end(); ch++) {
        if (*ch != ' ') {
@@ -177,3 +177,92 @@ int isOnlySpaces(std :: string input) {
     }
 	return (1);					
 }
+
+
+int isNotAlpha(PhoneBook *phonebook, std::string input, int contactIndex) {
+
+		
+	for (int i = 0; i < static_cast<int>(input.size()); i++) {
+		if (!std::isalpha(input[i])) {
+			
+			if (!std::isspace(input[i])) {
+				clearScreen();		
+				std::cout << "\033[31mError last input contains non alphabetic characters "\
+							<< ": Contact has not been saved ! \033[0m" << std::endl;
+						
+				eraseContactInfo(phonebook, contactIndex);
+				resetRecordOrder(phonebook, contactIndex);
+				return (1);
+			}			
+		}		
+	}
+	return (0);
+}
+
+
+std::string capitaliseInput(std::string input) {
+
+	std::string::iterator output = input.begin();
+
+	if (std::islower(*output))
+		*input.begin() = std::toupper(*input.begin());
+	
+	
+	return (input);
+}
+
+std::string convertStrToUpper(std::string input) {
+
+	std::string output;
+
+	for (std::string::iterator ch = input.begin(); ch < input.end(); ch++) {
+
+		if (std::islower(*ch))
+			output += std::toupper(*ch);
+		else 
+			output += *ch;
+	}
+	return (output);
+}
+
+std::string  removeExtraSpaces(std::string input) {
+
+	std::string result;
+
+	for (size_t i = 0; i < input.size(); i++) {
+		if (input[i] != ' ') {
+			result += input[i];
+		}
+		else {
+			
+			result += ' ';
+			while (i < input.size()) {
+
+				if (input[i] != ' ') {
+
+					input[i] = std::toupper(input[i]);
+					result += input[i];
+					break ;
+				}
+				i++;
+			}
+		}
+	}
+	return (result);
+}
+
+std::string  addHyphen(std::string input) {
+
+	std::string result;
+
+	for (size_t i = 0; i < input.size(); i++) {
+		if (input[i] != ' ') {
+			result += input[i];
+		}
+		else {
+			result += '-';			
+		}
+	}
+	return (result);
+}
+

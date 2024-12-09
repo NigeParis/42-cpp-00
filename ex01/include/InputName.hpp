@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_secret.hpp                                   :+:      :+:    :+:   */
+/*   InputName.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 10:30:15 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/08 10:40:26 by nige42           ###   ########.fr       */
+/*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
+/*   Updated: 2024/12/09 11:32:40 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_SECRET_HPP
-#define INPUT_SECRET_HPP
+#ifndef INPUT_NAME_HPP
+#define INPUT_NAME_HPP
 
 #include "PhoneBook.hpp"
-#include "Add_tools.hpp"
+#include "AddTools.hpp"
 
-int inputSecret(PhoneBook *phonebook, int contactIndex);
+int inputName(PhoneBook *phonebook, int contactIndex);
 
 #endif

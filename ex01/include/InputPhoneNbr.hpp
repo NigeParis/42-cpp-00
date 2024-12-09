@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Input_name.hpp                                     :+:      :+:    :+:   */
+/*   InputPhoneNbr.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nige42 <nige42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 09:12:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/07 23:15:58 by nige42           ###   ########.fr       */
+/*   Created: 2024/12/07 22:36:22 by nige42            #+#    #+#             */
+/*   Updated: 2024/12/09 11:32:38 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_NAME_HPP
-#define INPUT_NAME_HPP
+#ifndef INPUT_PHONENBR_HPP
+#define INPUT_PHONENBR_HPP
 
 #include "PhoneBook.hpp"
-#include "Add_tools.hpp"
+#include "AddTools.hpp"
 
-int inputName(PhoneBook *phonebook, int contactIndex);
+int inputPhoneNbr(PhoneBook *phonebook, int contactIndex);
 
 #endif
