@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 16:36:50 by nige42            #+#    #+#             */
-/*   Updated: 2024/12/09 17:08:04 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:24:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int search(PhoneBook *phonebook, std::string input) {
             display(phonebook, i);
         }
         std::cout << std::endl;
-        std::cout << "SEARCH : ";
+        std::cout << "SEARCH enter index number to display : ";
 		std::getline(std::cin, searchstr);
 		if (std::cin.eof())			
 			return (0);
