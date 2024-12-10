@@ -15,9 +15,6 @@ For our maiden task, we have a straightforward yet mighty mission: create a prog
 // Output: A DEFAULT MESSAGE
 ```
 
-refs biblio: </br>
-https://cplusplus.com/reference/ </br>
-https://en.cppreference.com/w/
 
 
 ## ex01. My Awesome PhoneBook
@@ -32,3 +29,12 @@ Ready for more fun? This second exercise turns up the excitement! We're creating
 But here’s the twist: Once your phonebook reaches its limit of 8 contacts, adding a new one will replace the oldest entry. So, the 9th contact will boot out the 1st, the 10th will kick out the 2nd, and so on. It's like musical chairs for your contacts!
 
 **Example**:
+
+
+
+
+
+
+refs biblio: </br>
+https://cplusplus.com/reference/ </br>
+https://en.cppreference.com/w/
