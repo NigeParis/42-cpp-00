@@ -15,6 +15,6 @@ For our maiden task, we have a straightforward yet mighty mission: create a prog
 // Output: A DEFAULT MESSAGE
 ```
 
-refs biblio:
-: https://cplusplus.com/reference/
-: https://en.cppreference.com/w/
+refs biblio: </br>
+https://cplusplus.com/reference/ </br>
+https://en.cppreference.com/w/
