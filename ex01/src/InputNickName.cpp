@@ -34,7 +34,6 @@ int  inputNickName(PhoneBook *phonebook, int contactIndex) {
         return (2);
     input = removeLeadingSpaces(input);
     input = removeEndingSpaces(input);
-	input = capitaliseInput(input);
 	getNickName(phonebook, input, contactIndex);
 	return (0);
 }

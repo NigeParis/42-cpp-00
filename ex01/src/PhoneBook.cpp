@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/09 17:05:41 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:46:18 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,19 @@ PhoneBook :: PhoneBook(void) {
 	}
 };
 
-
 PhoneBook :: ~PhoneBook(void) {
 	clearScreen();
 };
 
-
 int PhoneBook :: getRecordOrder(int i) {
 	return (_contact[i].getRecordNbr());
 };
-
 
 void PhoneBook :: setRecordOrder(int index, int new_index) {
 
 	PhoneBook::_contact[index].setRecordNbr(new_index);
 	return ;
 };
-
 
 int PhoneBook :: getIndex(int index) {
 	
@@ -55,7 +51,6 @@ std::string PhoneBook :: getName(int index) {
 	return (_contact[index].getName());	
 };
 
-
 void PhoneBook :: setLastName(std::string input, int index) {
 	
 	if (index < 0)
@@ -67,7 +62,6 @@ std::string PhoneBook :: getLastName(int index) {
 		
 	return (_contact[index].getLastName());	
 };
-
 
 void PhoneBook :: setNickName(std::string input, int index) {
 	
@@ -92,7 +86,6 @@ std::string PhoneBook :: getPhoneNbr(int index) {
 		
 	return (_contact[index].getPhoneNbr());	
 };
-
 
 void PhoneBook :: setSecret(std::string input, int index) {
 	

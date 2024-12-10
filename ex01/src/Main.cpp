@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/09 17:26:01 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:01:53 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(void) {
 		if (std::cin.eof())			
 			break ;
 		clearScreen();
-
 		if(isOnlySpaces(input))
 			continue ; 
 			
