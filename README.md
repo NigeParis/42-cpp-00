@@ -17,7 +17,7 @@ For our maiden task, we have a straightforward yet mighty mission: create a prog
 
 
 
-## ex01. My Awesome PhoneBook
+## ex01. PhoneBook
 
 Ready for more fun? This second exercise turns up the excitement! We're creating a super cool phonebook with an interactive terminal UI. Picture yourself adding contacts, searching for friends, and exiting the program whenever you're done – all through your trusty terminal.
 
