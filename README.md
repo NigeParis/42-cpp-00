@@ -33,6 +33,22 @@ But here’s the twist: Once your phonebook reaches its limit of 8 contacts, add
 ![Screenshot from 2024-12-10 16-50-58](https://github.com/user-attachments/assets/2b3eeeef-03fb-4dd4-ab92-0f3dda58293a)
 
 
+## ex02. The Job Of Your Dreams
+
+**Ready for the grand finale?** This third and final exercise is where we turn our coding prowess into pure magic. Imagine landing a job where you’re handed two mysterious files with cryptic clues, challenging you to build a class with all the bells and whistles – static and member functions included – to match the output of a provided main function. Intrigued? You should be!
+
+### Your Mission:
+1. **Analyze the Clues**: You've got `tests.cpp` and a log file `19920104_091532.log` (with different timestamps, of course). These hold the secrets to our success.
+2. **Build the Class**: Use your detective skills to figure out what each function should do.
+3. **Create Account.cpp**: Implement the functions in the `Account` class to ensure the main function works its magic.
+
+You also have the trusty `Account.hpp` header file with the class definition to guide you on your quest.
+
+**Example**:
+Recreate the output from `19920104_091532.log` with your `Account.cpp`. Dive in, decode the mysteries, and make the magic happen!
+
+Let’s code our way to victory! 🕵️‍♂️✨
+
 
 
 
