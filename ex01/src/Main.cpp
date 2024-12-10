@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/10 15:01:53 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:31:36 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(void) {
 	clearScreen();
 	while (1) {
 		
-		std::cout << "\033[34mEnter commands \"ADD\" \"SEARCH\" or \"EXIT\"\033[0m" << std::endl;
+		std::cout << "\033[34mEnter commands \"ADD\" \"SEARCH\" or \"EXIT\"\033[0m";
+		std::cout << std::endl;
 		std::cout << "PhoneBook : ";
 		std::getline(std::cin, input);
 		if (std::cin.eof())			

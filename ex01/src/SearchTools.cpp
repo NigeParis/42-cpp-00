@@ -77,8 +77,9 @@ std::string formatOutput(std::string input) {
 void putSearchError(void) {
 
     clearScreen();
-	std::cout << "\033[31mError contact not found "\
-		<< ": Contact can not be displayed ! \033[0m" << std::endl;
+	std::cout << "\033[31mError contact not found ";
+    std::cout << ": Contact can not be displayed ! \033[0m";
+    std::cout << std::endl;
 }
 
 std::string formatTelephone(std::string input) {

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/10 14:44:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:44:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	if (_nbWithdrawals) { 
 		std::cout << ";withdrawal:" << withdrawal;
 		std::cout << ";amount:" << _amount;
-		std::cout << ";nb_deposits:" << _nbDeposits;
+		std::cout << ";nb_withdrawals:" << _nbWithdrawals;
 	}
 	else {
 		std::cout << ";withdrawal:refused";

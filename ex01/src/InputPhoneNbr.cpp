@@ -43,7 +43,8 @@ int  inputPhoneNbr(PhoneBook *phonebook, int contactIndex) {
 		else {
 			clearScreen();
 			std::cout << "\033[31mError telephone number is an incorrect format ";
-			std::cout << ": please enter again\033[0m" << std::endl;
+			std::cout << ": please enter again\033[0m";
+			std::cout << std::endl;
 			input = "";
 		}
 	}

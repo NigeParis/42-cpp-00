@@ -95,8 +95,9 @@ int isEmptyInput(PhoneBook *phonebook, std::string input, int contactIndex) {
 	if (!input.size()) {
 	
 		clearScreen();	
-		std::cout << "\033[31mError last input contains an empty field "\
-			<< ": Contact has not been saved ! \033[0m" << std::endl;
+		std::cout << "\033[31mError last input contains an empty field ";
+		std::cout << ": Contact has not been saved ! \033[0m"; 
+		std::cout << std::endl;
 
 		eraseContactInfo(phonebook, contactIndex);
 		resetRecordOrder(phonebook, contactIndex);
@@ -114,8 +115,9 @@ int isNotPhoneNbr(PhoneBook *phonebook, std::string input, int contactIndex) {
 		if (!std::isdigit(input[i])) {
 		
 			clearScreen();	
-			std::cout << "\033[31mError telephone number contains not only numbers "\
-						<< ": Contact has not been saved ! \033[0m" << std::endl;
+			std::cout << "\033[31mError telephone number contains not only numbers ";
+			std::cout << ": Contact has not been saved ! \033[0m";
+			std::cout << std::endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
 			resetRecordOrder(phonebook, contactIndex);
@@ -132,8 +134,9 @@ int isNotPrintableInput(PhoneBook *phonebook, std::string input, int contactInde
 		if (!std::isprint(input[i])) {
 			
 			clearScreen();		
-			std::cout << "\033[31mError last input contains non-printable characters "\
-						<< ": Contact has not been saved ! \033[0m" << std::endl;
+			std::cout << "\033[31mError last input contains non-printable characters ";
+			std::cout << ": Contact has not been saved ! \033[0m";
+			std::cout << std::endl;
 						
 			eraseContactInfo(phonebook, contactIndex);
 			resetRecordOrder(phonebook, contactIndex);
@@ -153,8 +156,9 @@ int isNotOnlySpaces(PhoneBook *phonebook, std::string input, int contactIndex) {
 		}
 	}
 		clearScreen();
-		std::cout << "\033[31mError last input contains only spaces "\
-					<< ": Contact has not been saved ! \033[0m" << std::endl;
+		std::cout << "\033[31mError last input contains only spaces ";
+		std::cout << ": Contact has not been saved ! \033[0m";
+		std::cout << std::endl;
 						
 		eraseContactInfo(phonebook, contactIndex);
 		resetRecordOrder(phonebook, contactIndex);
@@ -187,8 +191,9 @@ int isNotAlpha(PhoneBook *phonebook, std::string input, int contactIndex) {
 			
 			if (!std::isspace(input[i])) {
 				clearScreen();		
-				std::cout << "\033[31mError last input contains non alphabetic characters "\
-							<< ": Contact has not been saved ! \033[0m" << std::endl;
+				std::cout << "\033[31mError last input contains non alphabetic characters ";
+				std::cout << ": Contact has not been saved ! \033[0m";
+				std::cout << std::endl;
 						
 				eraseContactInfo(phonebook, contactIndex);
 				resetRecordOrder(phonebook, contactIndex);

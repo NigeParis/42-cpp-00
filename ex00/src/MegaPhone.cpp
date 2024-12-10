@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:48:17 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/12/09 15:53:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:26:16 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
 		for (int i = 1; i < argc; i++) {
 			std::string str = argv[i];
 	
-			for (int i = 0; str[i]; i++) {
-				str[i] = std::toupper(static_cast<int>(str[i]));
+			for (size_t y = 0; y < str.length(); y++) {
+				str[y] = std::toupper(static_cast<int>(str[y]));
 			}
 			std::cout << str;
 		}
