@@ -18,3 +18,17 @@ For our maiden task, we have a straightforward yet mighty mission: create a prog
 refs biblio: </br>
 https://cplusplus.com/reference/ </br>
 https://en.cppreference.com/w/
+
+
+## ex01. My Awesome PhoneBook
+
+Ready for more fun? This second exercise turns up the excitement! We're creating a super cool phonebook with an interactive terminal UI. Picture yourself adding contacts, searching for friends, and exiting the program whenever you're done – all through your trusty terminal.
+
+### What You'll Do:
+- **ADD Contacts**: Populate your phonebook with up to 8 contacts.
+- **SEARCH Contacts**: Find your friends with ease.
+- **EXIT**: Clear out your contact list and gracefully end the program.
+
+But here’s the twist: Once your phonebook reaches its limit of 8 contacts, adding a new one will replace the oldest entry. So, the 9th contact will boot out the 1st, the 10th will kick out the 2nd, and so on. It's like musical chairs for your contacts!
+
+**Example**:
