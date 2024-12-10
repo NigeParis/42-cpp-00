@@ -30,6 +30,7 @@ But here’s the twist: Once your phonebook reaches its limit of 8 contacts, add
 
 **Example**:
 
+![Screenshot from 2024-12-10 16-50-58](https://github.com/user-attachments/assets/2b3eeeef-03fb-4dd4-ab92-0f3dda58293a)
 
 
 
