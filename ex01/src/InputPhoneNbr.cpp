@@ -12,7 +12,7 @@
 
 #include "InputPhoneNbr.hpp"
 
-static int getPhoneNbr(PhoneBook *phonebook, std::string input, int contactIndex) {
+int getPhoneNbr(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	phonebook->setPhoneNbr(input, contactIndex);	
 	return (0);

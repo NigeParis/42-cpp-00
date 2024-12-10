@@ -36,7 +36,7 @@ std::string removeEndingSpaces(std::string input) {
     return (input);
 }
 
-static void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
+void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
 	
 		int index;
 
@@ -47,7 +47,7 @@ static void resetRecordOrder(PhoneBook *phonebook, int contactIndex) {
 		}
 }
 
-static void eraseContactInfo(PhoneBook *phonebook, int contactIndex) {
+void eraseContactInfo(PhoneBook *phonebook, int contactIndex) {
 
 	if (!phonebook->getName(contactIndex).empty())		
 			phonebook->setName("", contactIndex);

@@ -16,6 +16,7 @@
 #include "PhoneBook.hpp"
 #include "AddTools.hpp"
 
+int getName(PhoneBook *phonebook, std::string input, int contactIndex);
 int inputName(PhoneBook *phonebook, int contactIndex);
 
 #endif

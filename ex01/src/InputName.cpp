@@ -12,7 +12,7 @@
 
 #include "InputName.hpp"
 
-static int getName(PhoneBook *phonebook, std::string input, int contactIndex) {
+int getName(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	if (input.empty())
 		return (1);

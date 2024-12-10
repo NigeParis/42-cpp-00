@@ -12,7 +12,7 @@
 
 #include "InputLastName.hpp"
 
-static int getLastName(PhoneBook *phonebook, std::string input, int contactIndex) {
+int getLastName(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	phonebook->setLastName(input, contactIndex);	
 	return (0);

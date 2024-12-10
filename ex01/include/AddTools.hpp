@@ -31,6 +31,8 @@ std::string capitaliseInput(std::string input);
 std::string convertStrToUpper(std::string input);
 std::string  removeExtraSpaces(std::string input);
 std::string  addHyphen(std::string input);
+void eraseContactInfo(PhoneBook *phonebook, int contactIndex);
+void resetRecordOrder(PhoneBook *phonebook, int contactIndex);
 
 
 #endif

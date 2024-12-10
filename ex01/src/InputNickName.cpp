@@ -12,7 +12,7 @@
 
 #include "InputNickName.hpp"
 
-static int getNickName(PhoneBook *phonebook, std::string input, int contactIndex) {
+int getNickName(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	phonebook->setNickName(input, contactIndex);
 	return (0);

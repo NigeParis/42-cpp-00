@@ -12,7 +12,7 @@
 
 #include "InputSecret.hpp"
 
-static int getSecret(PhoneBook *phonebook, std::string input, int contactIndex) {
+int getSecret(PhoneBook *phonebook, std::string input, int contactIndex) {
 
 	if (input.empty())
 		return (1);
