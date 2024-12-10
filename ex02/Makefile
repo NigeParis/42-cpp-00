@@ -16,7 +16,7 @@ CC=c++
 
 
 SRC_DIR = src/
-SRC = Account.cpp 
+SRC = tests.cpp Account.cpp 
 
 OBJ_DIR = build/
 
