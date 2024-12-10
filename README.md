@@ -8,15 +8,13 @@ For our maiden task, we have a straightforward yet mighty mission: create a prog
 
 **Example:**
 ```cpp
-./megaphone HELLO
-// Output: HELLO
+./megaphone hello world
+// Output: HELLOWORLD
 
 ./megaphone
-// Output: DEFAULT MESSAGE
+// Output: A DEFAULT MESSAGE
+```
 
-
-
-
-ref : https://cplusplus.com/reference/
-
-	: https://en.cppreference.com/w/
+refs biblio:
+: https://cplusplus.com/reference/
+: https://en.cppreference.com/w/
